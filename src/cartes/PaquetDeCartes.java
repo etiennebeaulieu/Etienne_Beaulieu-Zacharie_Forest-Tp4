@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class PaquetDeCartes implements Serializable
 {
+	private static final long serialVersionUID = -3742502342755309295L;
 	private Carte paquet= null;
 	public static final int NBR_ECHANGE = 1000;
 	

@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Carte implements Serializable, Comparable<Carte>
 {
+	private static final long serialVersionUID = 8196721120250324474L;
 	private SorteCartes sorte= null;
 	private ValeurCartes valeur= null;
 	private boolean visible = false;
