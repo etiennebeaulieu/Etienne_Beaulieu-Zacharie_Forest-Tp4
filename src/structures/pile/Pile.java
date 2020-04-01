@@ -6,6 +6,10 @@ import exception.*;
 
 public class Pile implements Serializable
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int taille = 0;
 	private NoeudPile sommet = null;
 
