@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.*;
 
-public class NoeudPile
+public class NoeudPileTest
 {
 
 	@Before
@@ -12,7 +12,7 @@ public class NoeudPile
 	{
 		fail("Not yet implemented");
 	}
-	
+
 	@Test
 	public void testNoeudPileObjectInvalide()
 	{
@@ -24,7 +24,7 @@ public class NoeudPile
 	{
 		fail("Not yet implemented");
 	}
-	
+
 	@Test
 	public void testNoeudPileObjectNoeudPileInvalide()
 	{

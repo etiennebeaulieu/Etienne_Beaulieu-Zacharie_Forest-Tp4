@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.*;
 
-public class PaquetDeCartes
+public class PaquetDeCartesTest
 {
 
 	@Before
@@ -12,7 +12,7 @@ public class PaquetDeCartes
 	{
 		fail("Not yet implemented");
 	}
-	
+
 	@Test
 	public void testPaquetDeCartesInvalide()
 	{
@@ -24,7 +24,7 @@ public class PaquetDeCartes
 	{
 		fail("Not yet implemented");
 	}
-	
+
 	@Test
 	public void testPaquetDeCartesListOfCarteInvalide()
 	{

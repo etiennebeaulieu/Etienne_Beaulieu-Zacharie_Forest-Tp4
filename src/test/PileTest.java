@@ -4,29 +4,35 @@ import static org.junit.Assert.*;
 
 import org.junit.*;
 
-public class Pioche
+public class PileTest
 {
 
 	@Before
-	public void testPioche()
-	{
-		fail("Not yet implemented");
-	}
-	
-	@Test
-	public void testPiocheInvalide()
+	public void testPile()
 	{
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testPiger()
+	public void testPileInvalide()
 	{
 		fail("Not yet implemented");
 	}
 
 	@Test
-	public void testConsulterDessus()
+	public void testEmpiler()
+	{
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testDepiler()
+	{
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetPremier()
 	{
 		fail("Not yet implemented");
 	}
@@ -38,7 +44,19 @@ public class Pioche
 	}
 
 	@Test
+	public void testVider()
+	{
+		fail("Not yet implemented");
+	}
+
+	@Test
 	public void testSize()
+	{
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testToString()
 	{
 		fail("Not yet implemented");
 	}

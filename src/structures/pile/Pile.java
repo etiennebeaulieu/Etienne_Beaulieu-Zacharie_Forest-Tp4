@@ -30,7 +30,7 @@ public class Pile implements Serializable
 		Object retour = null;
 
 		retour = getPremier();
-		
+
 		this.sommet = this.sommet.getPrecedent();
 
 		return retour;
