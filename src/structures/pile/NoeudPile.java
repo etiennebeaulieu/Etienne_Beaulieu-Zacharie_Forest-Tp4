@@ -8,15 +8,15 @@ public class NoeudPile implements Serializable
 	private Object element = null;
 	private NoeudPile precedent = null;
 	
-	public NoeudPile(Object pElement)
+	public NoeudPile(Object element)
 	{
-		this(pElement, null);
+		this(element, null);
 	}
 	
-	public NoeudPile(Object pElement, NoeudPile pPrecedent)
+	public NoeudPile(Object element, NoeudPile precedent)
 	{
-		element = pElement;
-		precedent = pPrecedent;
+		this.element = element;
+		this.precedent = precedent;
 		
 	}
 	
@@ -25,9 +25,9 @@ public class NoeudPile implements Serializable
 		return element;
 	}
 	
-	public void setElement(Object pElement)
+	public void setElement(Object element)
 	{
-		element = pElement;
+		this.element = element;
 	}
 	
 	public NoeudPile getPrecedent()
@@ -35,9 +35,9 @@ public class NoeudPile implements Serializable
 		return precedent;
 	}
 	
-	public void setPrecedent(NoeudPile pPrecedent)
+	public void setPrecedent(NoeudPile precedent)
 	{
-		precedent = pPrecedent;
+		this.precedent = precedent;
 	}
 	
 }

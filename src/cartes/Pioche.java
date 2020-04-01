@@ -3,7 +3,6 @@ import structures.pile.*;
 
 public class Pioche
 {
-	private static final long serialVersionUID = 1L;
 	private Pile pioche= null;
 	
 	public Pioche(PaquetDeCartes paquet)
