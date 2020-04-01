@@ -39,7 +39,7 @@ public class Carte implements Serializable, Comparable<Carte>
 	
 	private void setSorte(SorteCartes sorte)
 	{
-		eh
+		
 	}
 	
 	public char getSorteSymbole()
