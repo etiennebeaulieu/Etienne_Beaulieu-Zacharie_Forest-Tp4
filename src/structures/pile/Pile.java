@@ -2,7 +2,6 @@ package structures.pile;
 
 import java.io.Serializable;
 
-import cartes.*;
 import exception.*;
 
 public class Pile implements Serializable
@@ -26,15 +25,9 @@ public class Pile implements Serializable
 	{
 		Object retour = null;
 
-		if (!isEmpty())
-		{
-			retour = sommet.getElement();
-			this.sommet = this.sommet.getPrecedent();
-
-			this.taille--;
-		}
-		else
-			throw new PileException("Pile vide");
+		retour = getPremier();
+		
+		this.sommet = this.sommet.getPrecedent();
 
 		return retour;
 	}
@@ -76,7 +69,7 @@ public class Pile implements Serializable
 
 		while (temp != null)
 		{
-			s = s + temp.getElement() + "\n";
+			s += temp.getElement() + "\n";
 			temp = temp.getPrecedent();
 		}
 
