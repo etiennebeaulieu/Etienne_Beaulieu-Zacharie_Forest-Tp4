@@ -13,7 +13,8 @@ public class Carte implements Serializable, Comparable<Carte>
 	
 	public Carte(ValeurCartes valeur, SorteCartes sorte) throws exception.ConstructeurException
 	{
-		
+		this.valeur = valeur;
+		this.sorte = sorte;
 	}
 	
 	public ValeurCartes getValeur()
