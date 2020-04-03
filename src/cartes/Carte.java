@@ -2,6 +2,8 @@ package cartes;
 
 import java.io.Serializable;
 
+import exception.ConstructeurException;
+
 public class Carte implements Serializable, Comparable<Carte>
 {
 	private static final long serialVersionUID = 8196721120250324474L;
@@ -36,8 +38,15 @@ public class Carte implements Serializable, Comparable<Carte>
 	public Carte(ValeurCartes valeur, SorteCartes sorte)
 			throws exception.ConstructeurException
 	{
-		setValeur(valeur);
-		setSorte(sorte);
+		if(valeur != null && sorte != null)
+		{
+			setValeur(valeur);
+			setSorte(sorte);
+		}
+		else 
+		{
+			throw new ConstructeurException("Valeur ou sorte invalide");
+		}
 	}
 
 	/**
