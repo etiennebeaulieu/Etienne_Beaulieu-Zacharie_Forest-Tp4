@@ -42,25 +42,33 @@ public class NoeudPileTest
 	@Test
 	public void testGetElement()
 	{
-		AssertEqual((Integer)n1.getElement(), obj1);
+		assertEquals(n1.getElement(), obj1);
+		assertEquals(n2.getElement(), obj3);
 	}
 
 	@Test
 	public void testSetElement()
 	{
-		fail("Not yet implemented");
+		Object objTemp = new Object();
+		NoeudPile nTemp = new NoeudPile(objTemp);
+		n1.setElement(nTemp);
+		assertEquals(n1.getElement(), nTemp);
 	}
 
 	@Test
 	public void testGetPrecedent()
 	{
-		fail("Not yet implemented");
+		assertEquals(n1.getPrecedent(), null);
+		assertEquals(n2.getPrecedent(), nPrecedent);
 	}
 
 	@Test
 	public void testSetPrecedent()
 	{
-		fail("Not yet implemented");
+		n2.setPrecedent(n1);
+		assertEquals(n2.getPrecedent(), n1);
+		n1.setPrecedent(nPrecedent);
+		assertEquals(n1.getPrecedent(), nPrecedent);
 	}
 
 }
