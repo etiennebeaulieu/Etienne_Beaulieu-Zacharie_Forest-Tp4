@@ -11,7 +11,7 @@ public class Pioche
 		pioche = new Pile();
 		if (paquet != null)
 		{
-			for (int i = paquet.size(); i > 0; i--)
+			for (int i = paquet.size()-1; i >= 0; i--)
 			{
 				pioche.empiler(paquet.consulterCarte(i));
 			}

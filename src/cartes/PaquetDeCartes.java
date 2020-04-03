@@ -100,7 +100,7 @@ public class PaquetDeCartes implements Serializable
 
 	private boolean validerPosition(int position)
 	{
-		return (position > 0 && position < this.size());
+		return (position >= 0 && position < this.size());
 	}
 
 }
