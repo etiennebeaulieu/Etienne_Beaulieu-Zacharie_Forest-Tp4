@@ -31,6 +31,7 @@ public class PaquetDeCartes implements Serializable
 		if (paquet != null)
 		{
 			this.paquet = paquet;
+			
 		}
 		else
 			throw new ConstructeurException(
@@ -59,7 +60,7 @@ public class PaquetDeCartes implements Serializable
 	{
 		Carte carte = null;
 
-		if (paquet != null && validerPosition(position))
+		if (validerPosition(position))
 		{
 			carte = paquet.get(position);
 		}
@@ -72,7 +73,7 @@ public class PaquetDeCartes implements Serializable
 	{
 		Carte carte = null;
 
-		if (paquet != null && validerPosition(position))
+		if (validerPosition(position))
 		{
 			carte = paquet.remove(position);
 		}
