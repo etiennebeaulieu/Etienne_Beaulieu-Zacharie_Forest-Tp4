@@ -196,5 +196,14 @@ public class Carte implements Serializable, Comparable<Carte>
 		return (this.valeur.toString() + " " + this.sorte.toString() + " "
 				+ visible);
 	}
+	
+	public static void main(String[] args)
+	{
+		Carte c1 = new Carte(ValeurCartes.V_3, SorteCartes.COEUR);
+		System.out.println(c1.valeur.toString() + c1.sorte.toString());
+		Carte c2 = new Carte(ValeurCartes.V_JACK, SorteCartes.COEUR);
+		System.out.println(c2.valeur.toString() + c1.sorte.toString());
+		System.out.println(c1.compareTo(c2));
+	}
 
 }

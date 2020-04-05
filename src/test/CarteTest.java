@@ -13,7 +13,7 @@ import exception.ConstructeurException;
 public class CarteTest
 {
 	Carte c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13;
-	
+
 	@Before
 	public void testCarte()
 	{
@@ -40,29 +40,29 @@ public class CarteTest
 			new Carte(null, SorteCartes.COEUR);
 			fail("Constructeur invalide");
 		}
-		catch(ConstructeurException e)
-		{	
+		catch (ConstructeurException e)
+		{
 		}
-		
+
 		try
 		{
 			new Carte(ValeurCartes.V_10, null);
 			fail("Constructeur invalide");
 		}
-		catch(ConstructeurException e)
-		{	
+		catch (ConstructeurException e)
+		{
 		}
-		
+
 		try
 		{
 			new Carte(null, null);
 			fail("Constructeur invalide");
 		}
-		catch(ConstructeurException e)
-		{	
+		catch (ConstructeurException e)
+		{
 		}
 	}
-	
+
 	@Test
 	public void testGetValeur()
 	{
@@ -151,7 +151,7 @@ public class CarteTest
 		assertEquals(c11.estVisible(), false);
 		assertEquals(c12.estVisible(), false);
 		assertEquals(c13.estVisible(), false);
-		
+
 	}
 
 	@Test
@@ -183,7 +183,7 @@ public class CarteTest
 		assertEquals(c12.estVisible(), true);
 		c13.setVisible(true);
 		assertEquals(c13.estVisible(), true);
-		
+
 		c1.setVisible(false);
 		assertEquals(c1.estVisible(), false);
 		c2.setVisible(true);
@@ -194,7 +194,7 @@ public class CarteTest
 	public void testToStringCarte()
 	{
 		assertEquals(c1.toStringCarte(), "☺");
-		
+
 		c1.setVisible(true);
 		assertEquals(c1.toStringCarte(), "A♥");
 		c2.setVisible(true);
@@ -229,9 +229,9 @@ public class CarteTest
 		Carte cTemp1 = new Carte(ValeurCartes.V_AS, SorteCartes.COEUR);
 		Carte cTemp2 = new Carte(ValeurCartes.V_2, SorteCartes.COEUR);
 		Carte cTemp3 = new Carte(ValeurCartes.V_AS, SorteCartes.CARREAU);
-		
+
 		assertTrue(c1.equals(cTemp1));
-		
+
 		assertFalse(c1.equals(null));
 		assertFalse(c1.equals(new Integer(5)));
 		assertFalse(c1.equals(cTemp2));
@@ -242,7 +242,40 @@ public class CarteTest
 	@Test
 	public void testCompareTo()
 	{
-		fail("Not yet implemented");
+
+		// Même valeur, même sorte
+		Carte cTemp1 = new Carte(ValeurCartes.V_AS, SorteCartes.COEUR);
+		assertTrue(c1.compareTo(cTemp1) == 0);
+
+		// Même valeur, pas même sorte
+		Carte cTemp2 = new Carte(ValeurCartes.V_2, SorteCartes.CARREAU);
+		Carte cTemp3 = new Carte(ValeurCartes.V_2, SorteCartes.PIQUE);
+		Carte cTemp4 = new Carte(ValeurCartes.V_2, SorteCartes.TREFLE);
+		assertTrue(c2.compareTo(cTemp2) < 0);
+		assertTrue(c2.compareTo(cTemp3) > 0);
+		assertTrue(c2.compareTo(cTemp4) > 0);
+
+		// Pas même valeur, même sorte
+		Carte cTemp5 = new Carte(ValeurCartes.V_AS, SorteCartes.COEUR);
+		Carte cTemp6 = new Carte(ValeurCartes.V_2, SorteCartes.COEUR);
+		Carte cTemp7 = new Carte(ValeurCartes.V_6, SorteCartes.COEUR);
+		Carte cTemp8 = new Carte(ValeurCartes.V_10, SorteCartes.COEUR);
+		Carte cTemp9 = new Carte(ValeurCartes.V_JACK, SorteCartes.COEUR);
+		Carte cTemp10 = new Carte(ValeurCartes.V_QUEEN, SorteCartes.COEUR);
+		Carte cTemp11 = new Carte(ValeurCartes.V_KING, SorteCartes.COEUR);
+		assertTrue(c3.compareTo(cTemp5) > 0);
+		assertTrue(c3.compareTo(cTemp6) > 0);
+		assertTrue(c3.compareTo(cTemp7) < 0);
+		assertTrue(c3.compareTo(cTemp8) > 0);
+		assertTrue(c3.compareTo(cTemp9) > 0);
+		assertTrue(c3.compareTo(cTemp10) > 0);
+		assertTrue(c3.compareTo(cTemp11) > 0);
+		
+		// Pas même valeur, pas même sorte
+		assertTrue(c3.compareTo(c8) < 0);
+		assertTrue(c3.compareTo(c6) < 0);
+		assertTrue(c3.compareTo(cTemp2) > 0);
+		assertTrue(c3.compareTo(c13) > 0);
 	}
 
 	@Test
@@ -261,7 +294,7 @@ public class CarteTest
 		assertEquals(c11.toString(), "11 J ♣ false");
 		assertEquals(c12.toString(), "12 Q ♣ false");
 		assertEquals(c13.toString(), "13 K ♣ false");
-		
+
 		c1.setVisible(true);
 		assertEquals(c1.toString(), "1 A ♥ true");
 	}
