@@ -108,19 +108,47 @@ public class PaquetDeCartesTest
 	@Test
 	public void testRetournerToutesLesCartes()
 	{
-		fail("Not yet implemented");
+		paquet1.retournerToutesLesCartes(true);
+		double compteur = 0;
+		for(int i = 0; i<paquet1.size(); i++)
+		{
+			if(paquet1.consulterCarte(i).estVisible() == true)
+			{
+				compteur++;
+			}
+		}
+		assertTrue(compteur/52 == 52/52);
+		
+		paquet1.retournerToutesLesCartes(false);
+		compteur = 0;
+		for(int i = 0; i<paquet1.size(); i++)
+		{
+			if(paquet1.consulterCarte(i).estVisible() == false)
+			{
+				compteur++;
+			}
+		}
+		assertTrue(compteur/52 == 52/52);
+		
 	}
 
 	@Test
 	public void testSize()
 	{
-		fail("Not yet implemented");
+		assertEquals(paquet1.size(), 52);
+		assertEquals(paquet2.size(), 8);
+		
 	}
 
 	@Test
 	public void testIsEmpty()
 	{
-		fail("Not yet implemented");
+		ArrayList<Carte> list = new ArrayList<Carte>();
+		PaquetDeCartes paquet3 = new PaquetDeCartes(list);
+		
+		assertTrue(paquet1.isEmpty()== false);
+		assertTrue(paquet2.isEmpty()== false);
+		assertTrue(paquet3.isEmpty()== true);
 	}
 
 }
