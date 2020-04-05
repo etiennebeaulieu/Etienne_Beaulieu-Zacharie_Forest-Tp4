@@ -4,6 +4,14 @@ import java.io.Serializable;
 
 import exception.ConstructeurException;
 
+/**
+ * Classe permettant de représenter l'abstration d'une carte à jouer. Les objets
+ * de cette classe peuvent servir à produire un paquet de cartes.
+ *
+ * @see java.lang.Object
+ * @author Zacharie Forest & Étienne Beaulieu
+ * @version 1
+ */
 public class Carte implements Serializable, Comparable<Carte>
 {
 	private static final long serialVersionUID = 8196721120250324474L;
@@ -38,12 +46,12 @@ public class Carte implements Serializable, Comparable<Carte>
 	public Carte(ValeurCartes valeur, SorteCartes sorte)
 			throws exception.ConstructeurException
 	{
-		if(valeur != null && sorte != null)
+		if (valeur != null && sorte != null)
 		{
 			setValeur(valeur);
 			setSorte(sorte);
 		}
-		else 
+		else
 		{
 			throw new ConstructeurException("Valeur ou sorte invalide");
 		}
@@ -195,15 +203,6 @@ public class Carte implements Serializable, Comparable<Carte>
 	{
 		return (this.valeur.toString() + " " + this.sorte.toString() + " "
 				+ visible);
-	}
-	
-	public static void main(String[] args)
-	{
-		Carte c1 = new Carte(ValeurCartes.V_3, SorteCartes.COEUR);
-		System.out.println(c1.valeur.toString() + c1.sorte.toString());
-		Carte c2 = new Carte(ValeurCartes.V_JACK, SorteCartes.COEUR);
-		System.out.println(c2.valeur.toString() + c1.sorte.toString());
-		System.out.println(c1.compareTo(c2));
 	}
 
 }
