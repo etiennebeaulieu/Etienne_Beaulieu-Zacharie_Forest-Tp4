@@ -516,15 +516,19 @@ public class AcesUpSolitaire extends JFrame
 	{
 		if (!colonneCartes[indexColonne].isEmpty())
 		{
-			for (int i = 0; i < NBR_COLONNES_DE_CARTES; i++)
+			int i = 0;
+			boolean sortie = false;
+			while (i < NBR_COLONNES_DE_CARTES && !sortie)
 			{
 				if (colonneCartes[i].isEmpty())
 				{
 					colonneCartes[i].add(0,
 							colonneCartes[indexColonne].remove(0));
 					dessinerListeCartes(indexColonne);
+					sortie = true;
 				}
 				dessinerListeCartes(i);
+				i++;
 			}
 		}
 
