@@ -659,7 +659,24 @@ public class AcesUpSolitaire extends JFrame
 	// TODO Complétez le code de la méthode : partieGagne
 	public boolean partieGagner()
 	{
-		return true;
+		boolean gagner = false;
+		int compteur = 0;
+		
+		for(int i = 0; i <NBR_COLONNES_DE_CARTES; i++)
+		{
+			if(colonneCartes[i].size() == 1)
+			{
+				compteur++;
+			}
+		}
+		if(compteur ==4)
+			gagner = true;
+		
+		return gagner;
+		
+		
+		
+		
 	}
 
 	/**
@@ -711,7 +728,7 @@ public class AcesUpSolitaire extends JFrame
 	// TODO Complétez le code de la méthode : enregistrerInfoPartie
 	public void enregistrerInfoPartie(File pCible) throws IOException
 	{
-
+		
 	}
 
 	/**
