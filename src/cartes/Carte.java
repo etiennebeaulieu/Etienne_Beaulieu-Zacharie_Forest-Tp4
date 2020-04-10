@@ -201,8 +201,7 @@ public class Carte implements Serializable, Comparable<Carte>
 	@Override
 	public String toString()
 	{
-		return (this.valeur.toString() + " " + this.sorte.toString() + " "
-				+ visible);
+		return (this.valeur.getSymbole() + " " + this.sorte.toString());
 	}
 
 }

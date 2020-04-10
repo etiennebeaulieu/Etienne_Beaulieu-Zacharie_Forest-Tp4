@@ -56,6 +56,7 @@ public class Pile implements Serializable
 		retour = getPremier();
 
 		this.sommet = this.sommet.getPrecedent();
+		taille--;
 
 		return retour;
 	}
