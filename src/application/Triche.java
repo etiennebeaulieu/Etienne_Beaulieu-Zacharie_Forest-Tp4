@@ -1,5 +1,6 @@
 package application;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -62,9 +63,10 @@ public class Triche
 
 	/**
 	 * Cette méthode prend la carte la plus forte de la colonne et elle la monte
-	 * en haut de la colonne. En cas d'égalité (pour 2 As), la méthode considère la carte la
-	 * plus haute dans la colonne. Ça permet entre autre de changer l'As de place.
-	 * Il faut ici considérer l'As comme étant la carte la plus forte.
+	 * en haut de la colonne. En cas d'égalité (pour 2 As), la méthode considère
+	 * la carte la plus haute dans la colonne. Ça permet entre autre de changer
+	 * l'As de place. Il faut ici considérer l'As comme étant la carte la plus
+	 * forte.
 	 *
 	 * @param colonneCartes la colonne à modifier.
 	 *
@@ -72,14 +74,53 @@ public class Triche
 	// TODO Complétez le code de la méthode : tricheMonter
 	private static void tricheMonter(List colonneCartes)
 	{
+		// int maxIndex = 0;
+		// for (int i = 0; i < colonneCartes.size(); i++)
+		// {
+		// maxIndex = i;
+		// for (int j = i + 1; j < colonneCartes.size(); j++)
+		// {
+		// if (((Carte) colonneCartes.get(j)).getValeur()
+		// .getValeur() == 1 || ((Carte) colonneCartes.get(j)).getValeur()
+		// .getValeur() > ((Carte) colonneCartes
+		// .get(maxIndex)).getValeur()
+		// .getValeur())
+		// {
+		// maxIndex = j;
+		// }
+		// }
+		// }
+		// colonneCartes.add(colonneCartes.size(),
+		// colonneCartes.remove(maxIndex));
+
+		int max = 0;
+		boolean trouve = false;
+		int compteur = 0;
+		for (int i = 0; i < colonneCartes.size() && !trouve; i++)
+		{
+			for (int j = i + 1; j < colonneCartes.size(); j++)
+			{
+				if (((Carte) colonneCartes.get(j)).getValeur()
+						.getValeur() > ((Carte) colonneCartes.get(i))
+								.getValeur().getValeur())
+				{
+					max = j;
+					compteur++;
+				}
+			}
+			if (compteur == 0)
+				trouve = true;
+		}
+		colonneCartes.add(colonneCartes.size(), colonneCartes.remove(max));
 
 	}
 
 	/**
 	 * Cette méthode prend la carte la plus forte de la colonne et elle la
-	 * descend en bas de la colonne. En cas d'égalité (pour 2 As), la méthode considère la
-	 * carte la plus basse dans la colonne. Ça permet entre autre de changer l'As
-	 * de place. Il faut ici considérer l'As comme étant la carte la plus forte.
+	 * descend en bas de la colonne. En cas d'égalité (pour 2 As), la méthode
+	 * considère la carte la plus basse dans la colonne. Ça permet entre autre
+	 * de changer l'As de place. Il faut ici considérer l'As comme étant la
+	 * carte la plus forte.
 	 *
 	 * @param colonneCartes la colonne à modifier.
 	 *

@@ -52,7 +52,7 @@ public class PiocheTest
 	@Test
 	public void testConsulterDessus()
 	{
-		assertEquals(pioche1.consulterDessus(), "1 A ♠ false");
+		assertEquals(pioche1.consulterDessus(), "A ♠");
 	}
 
 	@Test
@@ -69,6 +69,11 @@ public class PiocheTest
 		assertEquals(pioche1.size(), 8);
 		assertEquals(pioche2.size(), 52);
 		assertEquals(pioche3.size(), 0);
+		pioche2.consulterDessus();
+		assertEquals(pioche2.size(), 52);
+		pioche2.piger();
+		assertEquals(pioche2.size(), 51);
+		
 	}
 
 }

@@ -281,22 +281,22 @@ public class CarteTest
 	@Test
 	public void testToString()
 	{
-		assertEquals(c1.toString(), "1 A ♥ false");
-		assertEquals(c2.toString(), "2 2 ♥ false");
-		assertEquals(c3.toString(), "3 3 ♥ false");
-		assertEquals(c4.toString(), "4 4 \u2666 false");
-		assertEquals(c5.toString(), "5 5 \u2666 false");
-		assertEquals(c6.toString(), "6 6 \u2666 false");
-		assertEquals(c7.toString(), "7 7 ♠ false");
-		assertEquals(c8.toString(), "8 8 ♠ false");
-		assertEquals(c9.toString(), "9 9 ♠ false");
-		assertEquals(c10.toString(), "10 10 ♣ false");
-		assertEquals(c11.toString(), "11 J ♣ false");
-		assertEquals(c12.toString(), "12 Q ♣ false");
-		assertEquals(c13.toString(), "13 K ♣ false");
+		assertEquals(c1.toString(), "A ♥");
+		assertEquals(c2.toString(), "2 ♥");
+		assertEquals(c3.toString(), "3 ♥");
+		assertEquals(c4.toString(), "4 \u2666");
+		assertEquals(c5.toString(), "5 \u2666");
+		assertEquals(c6.toString(), "6 \u2666");
+		assertEquals(c7.toString(), "7 ♠");
+		assertEquals(c8.toString(), "8 ♠");
+		assertEquals(c9.toString(), "9 ♠");
+		assertEquals(c10.toString(), "10 ♣");
+		assertEquals(c11.toString(), "J ♣");
+		assertEquals(c12.toString(), "Q ♣");
+		assertEquals(c13.toString(), "K ♣");
 
 		c1.setVisible(true);
-		assertEquals(c1.toString(), "1 A ♥ true");
+		assertEquals(c1.toString(), "A ♥");
 	}
 
 }
