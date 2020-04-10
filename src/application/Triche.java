@@ -71,28 +71,8 @@ public class Triche
 	 * @param colonneCartes la colonne à modifier.
 	 *
 	 */
-	// TODO Complétez le code de la méthode : tricheMonter
 	private static void tricheMonter(List colonneCartes)
 	{
-		// int maxIndex = 0;
-		// for (int i = 0; i < colonneCartes.size(); i++)
-		// {
-		// maxIndex = i;
-		// for (int j = i + 1; j < colonneCartes.size(); j++)
-		// {
-		// if (((Carte) colonneCartes.get(j)).getValeur()
-		// .getValeur() == 1 || ((Carte) colonneCartes.get(j)).getValeur()
-		// .getValeur() > ((Carte) colonneCartes
-		// .get(maxIndex)).getValeur()
-		// .getValeur())
-		// {
-		// maxIndex = j;
-		// }
-		// }
-		// }
-		// colonneCartes.add(colonneCartes.size(),
-		// colonneCartes.remove(maxIndex));
-
 		int max = 0;
 		boolean trouve = false;
 		int compteur = 0;
@@ -100,7 +80,12 @@ public class Triche
 		{
 			for (int j = i + 1; j < colonneCartes.size(); j++)
 			{
-				if (((Carte) colonneCartes.get(j)).getValeur()
+				if(((Carte) colonneCartes.get(i)).getValeur().getValeur() == 1)
+				{
+					max = i;
+				}
+				
+				else if (((Carte) colonneCartes.get(j)).getValeur()
 						.getValeur() > ((Carte) colonneCartes.get(i))
 								.getValeur().getValeur())
 				{
@@ -125,10 +110,32 @@ public class Triche
 	 * @param colonneCartes la colonne à modifier.
 	 *
 	 */
-	// TODO Complétez le code de la méthode : tricheDescendre
 	private static void tricheDescendre(List colonneCartes)
 	{
-
+		int max = 0;
+		boolean trouve = false;
+		int compteur = 0;
+		for (int i = 0; i < colonneCartes.size() && !trouve; i++)
+		{
+			for (int j = i + 1; j < colonneCartes.size(); j++)
+			{
+				if(((Carte) colonneCartes.get(i)).getValeur().getValeur() == 1)
+				{
+					max = i;
+				}
+				
+				else if (((Carte) colonneCartes.get(j)).getValeur()
+						.getValeur() > ((Carte) colonneCartes.get(i))
+								.getValeur().getValeur())
+				{
+					max = j;
+					compteur++;
+				}
+			}
+			if (compteur == 0)
+				trouve = true;
+		}
+		colonneCartes.add(0, colonneCartes.remove(max));
 	}
 
 }
