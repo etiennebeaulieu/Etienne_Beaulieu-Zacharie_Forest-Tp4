@@ -514,14 +514,18 @@ public class AcesUpSolitaire extends JFrame
 	// TODO Complétez le code de la méthode : gestionDeplacerListe
 	public void gestionDeplacerListe(int indexColonne)
 	{
-		for (int i = 0; i < NBR_COLONNES_DE_CARTES; i++)
+		if (!colonneCartes[indexColonne].isEmpty())
 		{
-			if (colonneCartes[i].isEmpty())
+			for (int i = 0; i < NBR_COLONNES_DE_CARTES; i++)
 			{
-				colonneCartes[i].add(0, colonneCartes[indexColonne].remove(0));
-				dessinerListeCartes(indexColonne);
+				if (colonneCartes[i].isEmpty())
+				{
+					colonneCartes[i].add(0,
+							colonneCartes[indexColonne].remove(0));
+					dessinerListeCartes(indexColonne);
+				}
+				dessinerListeCartes(i);
 			}
-			dessinerListeCartes(i);
 		}
 
 	}
@@ -548,7 +552,8 @@ public class AcesUpSolitaire extends JFrame
 
 			int i = 0;
 			boolean sortie = false;
-			while (i < NBR_COLONNES_DE_CARTES && !sortie && !(carteRecu.getValeurSymbole().equals("A")))
+			while (i < NBR_COLONNES_DE_CARTES && !sortie
+					&& !(carteRecu.getValeurSymbole().equals("A")))
 			{
 				if (!colonneCartes[i].isEmpty())
 				{
@@ -556,8 +561,9 @@ public class AcesUpSolitaire extends JFrame
 
 					if (carteRecu.getSorte().equals(carteComp.getSorte())
 							&& (carteComp.getValeur().getValeur() == 1
-							|| carteComp.getValeur().getValeur() > carteRecu
-									.getValeur().getValeur()))
+									|| carteComp.getValeur()
+											.getValeur() > carteRecu.getValeur()
+													.getValeur()))
 					{
 						colonneCartes[pNoListe].remove(0);
 						sortie = true;
