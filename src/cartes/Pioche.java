@@ -1,5 +1,7 @@
 package cartes;
 
+import java.io.Serializable;
+
 import structures.pile.*;
 
 /**
@@ -13,8 +15,12 @@ import structures.pile.*;
  * @author Zacharie Forest & Étienne Beaulieu
  * @version 1
  */
-public class Pioche
+public class Pioche implements Serializable
 {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6270341352382907973L;
 	/**
 	 * 
 	 */
