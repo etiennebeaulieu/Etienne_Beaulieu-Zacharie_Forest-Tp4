@@ -17,18 +17,21 @@ import structures.pile.*;
  */
 public class Pioche implements Serializable
 {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -6270341352382907973L;
+
 	/**
-	 * 
+	 * la pile qui va représenter notre pioche
 	 */
 	private Pile pioche = null;
 
 	/**
+	 * Constructeur. Met les cartes du paquet dans la pioche. Faire attention de
+	 * conserver l'ordre et la visibilité des cartes du paquet reçu en entrée,
+	 * en les mettant dans la pioche. Il ne faut pas inverser l'ordre des
+	 * cartes.
 	 * 
-	 * @param paquet
+	 * @param paquet, - le paquet de cartes à mettre dans la pioche. Peut être
+	 *            un pointeur "null", qui donne une pioche vide.
 	 */
 	public Pioche(PaquetDeCartes paquet)
 	{
@@ -43,8 +46,10 @@ public class Pioche implements Serializable
 	}
 
 	/**
+	 * Permet de piger une carte sur le dessus du paquet. Ne modifie pas la
+	 * visibilité de la carte pigée
 	 * 
-	 * @return
+	 * @return Carte, la carte pigée ou null si le paquet est vide.
 	 */
 	public Carte piger()
 	{
@@ -57,8 +62,11 @@ public class Pioche implements Serializable
 	}
 
 	/**
+	 * Permet de voir la carte du dessus sans la piger. Ne modifie pas la
+	 * visibilité de la carte. Utilise la méthode "toStringCarte()"
 	 * 
-	 * @return
+	 * @return String, une chaîne qui représente la carte du dessus si la pioche
+	 *         n'est pas vide.
 	 * @throws exception.PiocheException
 	 */
 	public String consulterDessus() throws exception.PiocheException
@@ -72,8 +80,8 @@ public class Pioche implements Serializable
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Permet de savoir si la pioche est vide
+	 * @return boolean, vrai si la pioche est vide.
 	 */
 	public boolean isEmpty()
 	{
@@ -81,8 +89,8 @@ public class Pioche implements Serializable
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Retourne la taille de la pioche
+	 * @return int, la taille.
 	 */
 	public int size()
 	{
