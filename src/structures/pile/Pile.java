@@ -14,19 +14,19 @@ public class Pile implements Serializable
 	 * @version 1
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
-	 * 
+	 * Conserve le nombre d'éléments dans la pile
 	 */
 	private int taille = 0;
-	
+
 	/**
-	 * 
+	 * Pointeur pour le sommet de la pile
 	 */
 	private NoeudPile sommet = null;
 
 	/**
-	 * 
+	 * Construit une pile vide
 	 */
 	public Pile()
 	{
@@ -35,8 +35,9 @@ public class Pile implements Serializable
 	}
 
 	/**
+	 * Empile un objet dans la pile
 	 * 
-	 * @param element
+	 * @param element, - l'élément à empiler
 	 */
 	public void empiler(Object element)
 	{
@@ -45,8 +46,9 @@ public class Pile implements Serializable
 	}
 
 	/**
+	 * Retourne l'objet dépilé
 	 * 
-	 * @return
+	 * @return Object, l'élément dépilé
 	 * @throws exception.PileException
 	 */
 	public Object depiler() throws exception.PileException
@@ -62,8 +64,10 @@ public class Pile implements Serializable
 	}
 
 	/**
+	 * Retourne l'objet contenu dans le noeud sur le dessus de la pile sans le
+	 * dépiler. Lève une exception si la pile est vide.
 	 * 
-	 * @return
+	 * @return Object, l'objet sur le dessus de la pile.
 	 * @throws exception.PileException
 	 */
 	public Object getPremier() throws exception.PileException
@@ -79,8 +83,9 @@ public class Pile implements Serializable
 	}
 
 	/**
+	 * Vérifie si la pile est vide
 	 * 
-	 * @return
+	 * @return boolean, vrai si elle est vide
 	 */
 	public boolean isEmpty()
 	{
@@ -88,7 +93,7 @@ public class Pile implements Serializable
 	}
 
 	/**
-	 * 
+	 * Vide la pile
 	 */
 	public void vider()
 	{
@@ -97,8 +102,9 @@ public class Pile implements Serializable
 	}
 
 	/**
+	 * Retourne le nombre d'éléments dans la pile
 	 * 
-	 * @return
+	 * @return int, le nombre d'éléments dans la pile
 	 */
 	public int size()
 	{
@@ -106,8 +112,10 @@ public class Pile implements Serializable
 	}
 
 	/**
+	 * Permet de créer une chaîne représentant les éléments qui sont dans la
+	 * pile.
 	 * 
-	 * @return
+	 * @return String, les éléments des la pile
 	 */
 	@Override
 	public String toString()
