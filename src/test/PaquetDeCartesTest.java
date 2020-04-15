@@ -138,6 +138,13 @@ public class PaquetDeCartesTest
 		assertEquals(paquet1.size(), 52);
 		assertEquals(paquet2.size(), 8);
 		
+		paquet1.consulterCarte(4);
+		assertEquals(paquet1.size(), 52);
+		
+		paquet1.prendreCarte(4);
+		assertEquals(paquet1.size(), 51);
+		
+		
 	}
 
 	@Test
