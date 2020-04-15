@@ -1,5 +1,7 @@
 package cartes;
 
+
+//Étienne Beaulieu et Zacharie Forest
 public enum ValeurCartes
 {
 	V_AS("A", 1), V_2("2", 2), V_3("3", 3), V_4("4", 4), V_5("5", 5), V_6("6",

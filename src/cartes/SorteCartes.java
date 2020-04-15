@@ -2,6 +2,7 @@ package cartes;
 
 import java.awt.Color;
 
+//Étienne Beaulieu et Zacharie Forest
 public enum SorteCartes
 {
 	COEUR('♥', Color.RED), CARREAU('\u2666', Color.RED), PIQUE('♠',

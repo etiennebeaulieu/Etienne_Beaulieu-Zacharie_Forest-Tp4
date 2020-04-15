@@ -1,5 +1,6 @@
 package exception;
 
+//Étienne Beaulieu et Zacharie Forest
 public class ConstructeurException extends RuntimeException
 {
 	/**

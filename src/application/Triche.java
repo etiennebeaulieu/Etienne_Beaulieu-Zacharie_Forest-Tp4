@@ -12,7 +12,7 @@ import cartes.ValeurCartes;
  * Classe utilitaire qui permet à un joueur de tricher lorsque la partie est
  * terminée.
  *
- * @author Vos noms
+ * @author Étienne Beaulieu et Zacharie Forest
  */
 public class Triche
 {

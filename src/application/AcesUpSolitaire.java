@@ -38,7 +38,7 @@ import cartes.Pioche;
 /**
  * Application de jeu de Aces Up Solitaire
  *
- * @author Vos noms
+ * @author Étienne Beaulieu et Zacharie Forest
  */
 public class AcesUpSolitaire extends JFrame
 {
