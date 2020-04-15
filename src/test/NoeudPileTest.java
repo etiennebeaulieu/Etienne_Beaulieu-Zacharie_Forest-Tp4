@@ -6,6 +6,7 @@ import org.junit.*;
 
 import structures.pile.NoeudPile;
 
+//Étienne Beaulieu et Zacharie Forest
 public class NoeudPileTest
 {
 	NoeudPile n1, n2, nPrecedent;

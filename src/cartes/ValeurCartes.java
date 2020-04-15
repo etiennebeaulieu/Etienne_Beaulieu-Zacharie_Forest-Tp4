@@ -1,6 +1,5 @@
 package cartes;
 
-
 //Étienne Beaulieu et Zacharie Forest
 public enum ValeurCartes
 {

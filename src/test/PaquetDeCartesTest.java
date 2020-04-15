@@ -9,16 +9,16 @@ import exception.ConstructeurException;
 
 import org.junit.*;
 
+//Étienne Beaulieu et Zacharie Forest
 public class PaquetDeCartesTest
 {
 	PaquetDeCartes paquet1, paquet2;
-	
+
 	@Before
 	public void testPaquetDeCartes()
 	{
 		paquet1 = new PaquetDeCartes();
 	}
-
 
 	@Before
 	public void testPaquetDeCartesListOfCarte()
@@ -32,7 +32,7 @@ public class PaquetDeCartesTest
 		list.add(new Carte(ValeurCartes.V_2, SorteCartes.COEUR));
 		list.add(new Carte(ValeurCartes.V_2, SorteCartes.TREFLE));
 		list.add(new Carte(ValeurCartes.V_2, SorteCartes.CARREAU));
-		
+
 		paquet2 = new PaquetDeCartes(list);
 	}
 
@@ -55,54 +55,66 @@ public class PaquetDeCartesTest
 		paquet1.brasser();
 		PaquetDeCartes paquet3 = new PaquetDeCartes();
 		double compteur = 0;
-		
-		for(int i = 0; i<paquet1.size(); i++)
+
+		for (int i = 0; i < paquet1.size(); i++)
 		{
-			if(!(paquet1.consulterCarte(i).equals(paquet3.consulterCarte(i))))
+			if (!(paquet1.consulterCarte(i).equals(paquet3.consulterCarte(i))))
 			{
 				compteur++;
 			}
 		}
-		assertTrue(compteur/52 >= 47/52);
-		
+		assertTrue(compteur / 52 >= 47 / 52);
+
 	}
 
 	@Test
 	public void testConsulterCarte()
 	{
-		assertEquals(paquet2.consulterCarte(0),new Carte(ValeurCartes.V_AS, SorteCartes.PIQUE));
-		assertEquals(paquet2.consulterCarte(1),new Carte(ValeurCartes.V_AS, SorteCartes.COEUR));
-		assertEquals(paquet2.consulterCarte(2),new Carte(ValeurCartes.V_AS, SorteCartes.TREFLE));
-		assertEquals(paquet2.consulterCarte(3),new Carte(ValeurCartes.V_AS, SorteCartes.CARREAU));
-		assertEquals(paquet2.consulterCarte(4),new Carte(ValeurCartes.V_2, SorteCartes.PIQUE));
-		assertEquals(paquet2.consulterCarte(5),new Carte(ValeurCartes.V_2, SorteCartes.COEUR));
-		assertEquals(paquet2.consulterCarte(6),new Carte(ValeurCartes.V_2, SorteCartes.TREFLE));
-		assertEquals(paquet2.consulterCarte(7),new Carte(ValeurCartes.V_2, SorteCartes.CARREAU));
-		
-		assertEquals(paquet1.consulterCarte(3),new Carte(ValeurCartes.V_4, SorteCartes.COEUR));
-		assertEquals(paquet1.consulterCarte(9),new Carte(ValeurCartes.V_10, SorteCartes.COEUR));
-		assertEquals(paquet1.consulterCarte(23),new Carte(ValeurCartes.V_JACK, SorteCartes.CARREAU));
-		assertEquals(paquet1.consulterCarte(48),new Carte(ValeurCartes.V_10, SorteCartes.TREFLE));
+		assertEquals(paquet2.consulterCarte(0),
+				new Carte(ValeurCartes.V_AS, SorteCartes.PIQUE));
+		assertEquals(paquet2.consulterCarte(1),
+				new Carte(ValeurCartes.V_AS, SorteCartes.COEUR));
+		assertEquals(paquet2.consulterCarte(2),
+				new Carte(ValeurCartes.V_AS, SorteCartes.TREFLE));
+		assertEquals(paquet2.consulterCarte(3),
+				new Carte(ValeurCartes.V_AS, SorteCartes.CARREAU));
+		assertEquals(paquet2.consulterCarte(4),
+				new Carte(ValeurCartes.V_2, SorteCartes.PIQUE));
+		assertEquals(paquet2.consulterCarte(5),
+				new Carte(ValeurCartes.V_2, SorteCartes.COEUR));
+		assertEquals(paquet2.consulterCarte(6),
+				new Carte(ValeurCartes.V_2, SorteCartes.TREFLE));
+		assertEquals(paquet2.consulterCarte(7),
+				new Carte(ValeurCartes.V_2, SorteCartes.CARREAU));
+
+		assertEquals(paquet1.consulterCarte(3),
+				new Carte(ValeurCartes.V_4, SorteCartes.COEUR));
+		assertEquals(paquet1.consulterCarte(9),
+				new Carte(ValeurCartes.V_10, SorteCartes.COEUR));
+		assertEquals(paquet1.consulterCarte(23),
+				new Carte(ValeurCartes.V_JACK, SorteCartes.CARREAU));
+		assertEquals(paquet1.consulterCarte(48),
+				new Carte(ValeurCartes.V_10, SorteCartes.TREFLE));
 	}
 
 	@Test
 	public void testPrendreCarte()
-	{	
+	{
 		assertEquals(paquet1.prendreCarte(-1), null);
 		assertEquals(paquet1.prendreCarte(52), null);
 		assertEquals(paquet1.prendreCarte(53), null);
-		
+
 		PaquetDeCartes paquet4 = new PaquetDeCartes();
 		double compteur = 0;
-		for(int i = 0; i<paquet4.size(); i++)
+		for (int i = 0; i < paquet4.size(); i++)
 		{
-			if(paquet1.prendreCarte(0).equals(paquet4.consulterCarte(i)))
+			if (paquet1.prendreCarte(0).equals(paquet4.consulterCarte(i)))
 			{
 				compteur++;
 			}
 		}
-		assertTrue(compteur/52 == 52/52);
-		
+		assertTrue(compteur / 52 == 52 / 52);
+
 	}
 
 	@Test
@@ -110,26 +122,26 @@ public class PaquetDeCartesTest
 	{
 		paquet1.retournerToutesLesCartes(true);
 		double compteur = 0;
-		for(int i = 0; i<paquet1.size(); i++)
+		for (int i = 0; i < paquet1.size(); i++)
 		{
-			if(paquet1.consulterCarte(i).estVisible() == true)
+			if (paquet1.consulterCarte(i).estVisible() == true)
 			{
 				compteur++;
 			}
 		}
-		assertTrue(compteur/52 == 52/52);
-		
+		assertTrue(compteur / 52 == 52 / 52);
+
 		paquet1.retournerToutesLesCartes(false);
 		compteur = 0;
-		for(int i = 0; i<paquet1.size(); i++)
+		for (int i = 0; i < paquet1.size(); i++)
 		{
-			if(paquet1.consulterCarte(i).estVisible() == false)
+			if (paquet1.consulterCarte(i).estVisible() == false)
 			{
 				compteur++;
 			}
 		}
-		assertTrue(compteur/52 == 52/52);
-		
+		assertTrue(compteur / 52 == 52 / 52);
+
 	}
 
 	@Test
@@ -137,14 +149,13 @@ public class PaquetDeCartesTest
 	{
 		assertEquals(paquet1.size(), 52);
 		assertEquals(paquet2.size(), 8);
-		
+
 		paquet1.consulterCarte(4);
 		assertEquals(paquet1.size(), 52);
-		
+
 		paquet1.prendreCarte(4);
 		assertEquals(paquet1.size(), 51);
-		
-		
+
 	}
 
 	@Test
@@ -152,10 +163,10 @@ public class PaquetDeCartesTest
 	{
 		ArrayList<Carte> list = new ArrayList<Carte>();
 		PaquetDeCartes paquet3 = new PaquetDeCartes(list);
-		
-		assertTrue(paquet1.isEmpty()== false);
-		assertTrue(paquet2.isEmpty()== false);
-		assertTrue(paquet3.isEmpty()== true);
+
+		assertTrue(paquet1.isEmpty() == false);
+		assertTrue(paquet2.isEmpty() == false);
+		assertTrue(paquet3.isEmpty() == true);
 	}
 
 }

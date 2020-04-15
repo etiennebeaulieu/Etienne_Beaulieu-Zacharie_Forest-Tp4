@@ -14,7 +14,7 @@ import exception.ConstructeurException;
  * sera basé sur une liste dynamique.
  *
  * @see java.lang.Object
- * @author Zacharie Forest & Étienne Beaulieu
+ * @author Zacharie Forest et Étienne Beaulieu
  * @version 1
  */
 public class PaquetDeCartes implements Serializable
@@ -52,7 +52,7 @@ public class PaquetDeCartes implements Serializable
 	 * Constructeur avec paramètre permettant de faire des tests.
 	 * 
 	 * @param paquet - un paquet de cartes. Ne peut-être "null"
-	 * @throws exception.ConstructeurException
+	 * @throws exception.ConstructeurException Lance une exception si la liste est null
 	 */
 	public PaquetDeCartes(List<Carte> paquet)
 			throws exception.ConstructeurException

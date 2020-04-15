@@ -92,6 +92,7 @@ public class AcesUpSolitaire extends JFrame
 	/**
 	 * Constructeur de l'application Aces Up Solitaire. Il met en place une
 	 * interface simple
+	 * @param pPDC
 	 */
 	public AcesUpSolitaire(PaquetDeCartes pPDC)
 	{
@@ -727,12 +728,13 @@ public class AcesUpSolitaire extends JFrame
 	{
 		try
 		{
-			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(pCible));
-			
+			ObjectOutputStream oos = new ObjectOutputStream(
+					new FileOutputStream(pCible));
+
 			oos.writeObject(colonneCartes);
 			oos.writeObject(pioche);
 		}
-		catch(java.io.IOException e)
+		catch (java.io.IOException e)
 		{
 			e.printStackTrace();
 		}
@@ -753,23 +755,24 @@ public class AcesUpSolitaire extends JFrame
 	{
 		try
 		{
-			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(pSource));
-			
-			while(true)
+			ObjectInputStream ois = new ObjectInputStream(
+					new FileInputStream(pSource));
+
+			while (true)
 			{
-				colonneCartes = (List[])ois.readObject();
+				colonneCartes = (List[]) ois.readObject();
 				pioche = (Pioche) ois.readObject();
 			}
 		}
-		catch(java.io.IOException e)
+		catch (java.io.IOException e)
 		{
 			System.out.println(e);
 		}
-		catch(ClassNotFoundException e)
+		catch (ClassNotFoundException e)
 		{
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	private static void partiePiper()
@@ -807,7 +810,7 @@ public class AcesUpSolitaire extends JFrame
 	{
 
 		// Mode tests
-		//partiePiper();
+		// partiePiper();
 		// Mode jeu
 		vraiePartie();
 

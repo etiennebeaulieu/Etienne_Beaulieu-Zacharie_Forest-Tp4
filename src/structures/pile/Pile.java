@@ -4,16 +4,19 @@ import java.io.Serializable;
 
 import exception.*;
 
+/**
+ * Classe définissant une pile d'objets à partir d'un "NoeudPile" dynamique.
+ *
+ * @see java.lang.Object
+ * @author Zacharie Forest et Étienne Beaulieu
+ * @version 1
+ */
 public class Pile implements Serializable
 {
 	/**
-	 * Classe définissant une pile d'objets à partir d'un "NoeudPile" dynamique.
-	 *
-	 * @see java.lang.Object
-	 * @author Zacharie Forest & Étienne Beaulieu
-	 * @version 1
+	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -460427442119944675L;
 
 	/**
 	 * Conserve le nombre d'éléments dans la pile

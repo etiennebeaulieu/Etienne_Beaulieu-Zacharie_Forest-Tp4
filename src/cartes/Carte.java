@@ -9,7 +9,7 @@ import exception.ConstructeurException;
  * de cette classe peuvent servir à produire un paquet de cartes.
  *
  * @see java.lang.Object
- * @author Zacharie Forest & Étienne Beaulieu
+ * @author Zacharie Forest et Étienne Beaulieu
  * @version 1
  */
 public class Carte implements Serializable, Comparable<Carte>
@@ -41,7 +41,7 @@ public class Carte implements Serializable, Comparable<Carte>
 	 * 
 	 * @param valeur
 	 * @param sorte
-	 * @throws exception.ConstructeurException
+	 * @throws exception.ConstructeurException Lance une exception si la sorte ou la valeur est invalide
 	 */
 	public Carte(ValeurCartes valeur, SorteCartes sorte)
 			throws exception.ConstructeurException
@@ -183,7 +183,7 @@ public class Carte implements Serializable, Comparable<Carte>
 	 * 
 	 * @param obj - l'objet carte à comparer
 	 * @return int, une valeur négative ou = à 0 ou positive selon que l'objet
-	 *         courant est plus < ou = ou > que l'objet reçu en entrée.
+	 *         courant est plus grand ou = ou plus petit que l'objet reçu en entrée.
 	 */
 	@Override
 	public int compareTo(Carte obj)

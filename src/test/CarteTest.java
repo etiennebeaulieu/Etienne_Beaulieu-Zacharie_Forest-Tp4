@@ -10,6 +10,7 @@ import cartes.SorteCartes;
 import cartes.ValeurCartes;
 import exception.ConstructeurException;
 
+//Étienne Beaulieu et Zacharie Forest
 public class CarteTest
 {
 	Carte c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13;
@@ -270,7 +271,7 @@ public class CarteTest
 		assertTrue(c3.compareTo(cTemp9) > 0);
 		assertTrue(c3.compareTo(cTemp10) > 0);
 		assertTrue(c3.compareTo(cTemp11) > 0);
-		
+
 		// Pas même valeur, pas même sorte
 		assertTrue(c3.compareTo(c8) < 0);
 		assertTrue(c3.compareTo(c6) < 0);

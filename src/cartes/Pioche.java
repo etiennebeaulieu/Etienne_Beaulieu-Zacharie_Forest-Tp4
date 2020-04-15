@@ -12,7 +12,7 @@ import structures.pile.*;
  * pioche sera basée sur une pile dynamique.
  *
  * @see java.lang.Object
- * @author Zacharie Forest & Étienne Beaulieu
+ * @author Zacharie Forest et Étienne Beaulieu
  * @version 1
  */
 public class Pioche implements Serializable

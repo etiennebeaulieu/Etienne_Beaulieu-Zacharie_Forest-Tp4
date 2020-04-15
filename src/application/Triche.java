@@ -72,7 +72,7 @@ public class Triche
 	 *
 	 */
 	private static void tricheMonter(List colonneCartes)
-	{	
+	{
 		int max = 0;
 		boolean trouve = false;
 		int compteur = 0;
@@ -88,23 +88,27 @@ public class Triche
 			{
 				for (int j = i + 1; j < colonneCartes.size() && !trouve; j++)
 				{
-					if(((Carte) (colonneCartes.get(j))).getValeur().getValeur() == 1)
+					if (((Carte) (colonneCartes.get(j))).getValeur()
+							.getValeur() == 1)
 					{
 						max = j;
-						trouve=true;
+						trouve = true;
 					}
-					else if(((Carte) (colonneCartes.get(max))).getValeur().getValeur() < ((Carte) (colonneCartes.get(j))).getValeur().getValeur())
-					{
-						max = j;
-						compteur++;
-					}
+					else
+						if (((Carte) (colonneCartes.get(max))).getValeur()
+								.getValeur() < ((Carte) (colonneCartes.get(j)))
+										.getValeur().getValeur())
+						{
+							max = j;
+							compteur++;
+						}
 				}
-				if(compteur ==0)
+				if (compteur == 0)
 					trouve = true;
 			}
 		}
 
-		colonneCartes.add(colonneCartes.size()-1, colonneCartes.remove(max));
+		colonneCartes.add(colonneCartes.size() - 1, colonneCartes.remove(max));
 
 	}
 
@@ -120,11 +124,11 @@ public class Triche
 	 */
 	private static void tricheDescendre(List colonneCartes)
 	{
-		int max = colonneCartes.size()-1;
+		int max = colonneCartes.size() - 1;
 		boolean trouve = false;
 		int compteur = 0;
 
-		for (int i = colonneCartes.size()-1; i >=0  && !trouve; i--)
+		for (int i = colonneCartes.size() - 1; i >= 0 && !trouve; i--)
 		{
 			if (((Carte) (colonneCartes.get(i))).getValeur().getValeur() == 1)
 			{
@@ -135,18 +139,22 @@ public class Triche
 			{
 				for (int j = i - 1; j >= 0 && !trouve; j--)
 				{
-					if(((Carte) (colonneCartes.get(j))).getValeur().getValeur() == 1)
+					if (((Carte) (colonneCartes.get(j))).getValeur()
+							.getValeur() == 1)
 					{
 						max = j;
-						trouve=true;
+						trouve = true;
 					}
-					else if(((Carte) (colonneCartes.get(max))).getValeur().getValeur() < ((Carte) (colonneCartes.get(j))).getValeur().getValeur())
-					{
-						max = j;
-						compteur++;
-					}
+					else
+						if (((Carte) (colonneCartes.get(max))).getValeur()
+								.getValeur() < ((Carte) (colonneCartes.get(j)))
+										.getValeur().getValeur())
+						{
+							max = j;
+							compteur++;
+						}
 				}
-				if(compteur ==0)
+				if (compteur == 0)
 					trouve = true;
 			}
 		}

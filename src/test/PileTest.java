@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.*;
 import structures.pile.*;
 
+//Étienne Beaulieu et Zacharie Forest
 public class PileTest
 {
 	Pile p1;
