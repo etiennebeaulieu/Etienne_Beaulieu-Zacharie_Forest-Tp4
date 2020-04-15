@@ -807,7 +807,7 @@ public class AcesUpSolitaire extends JFrame
 	{
 
 		// Mode tests
-		// partiePiper();
+		//partiePiper();
 		// Mode jeu
 		vraiePartie();
 
