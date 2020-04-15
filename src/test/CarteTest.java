@@ -294,9 +294,6 @@ public class CarteTest
 		assertEquals(c11.toString(), "J ♣");
 		assertEquals(c12.toString(), "Q ♣");
 		assertEquals(c13.toString(), "K ♣");
-
-		c1.setVisible(true);
-		assertEquals(c1.toString(), "A ♥");
 	}
 
 }

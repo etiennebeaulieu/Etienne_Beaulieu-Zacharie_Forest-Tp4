@@ -188,9 +188,9 @@ public class Carte implements Serializable, Comparable<Carte>
 	@Override
 	public int compareTo(Carte obj)
 	{
-		return (this.valeur.toString() + this.sorte.toString())
+		return (this.valeur.getValeur() + this.sorte.toString())
 				.compareToIgnoreCase(
-						obj.valeur.toString() + obj.sorte.toString());
+						obj.valeur.getValeur() + obj.sorte.toString());
 	}
 
 	/**
