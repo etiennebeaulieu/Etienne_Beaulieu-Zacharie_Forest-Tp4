@@ -39,8 +39,8 @@ public class Carte implements Serializable, Comparable<Carte>
 	/**
 	 * Constructeur avec paramètres.
 	 * 
-	 * @param valeur
-	 * @param sorte
+	 * @param valeur Valeur de la carte
+	 * @param sorte Sorte de la carte
 	 * @throws exception.ConstructeurException Lance une exception si la sorte ou la valeur est invalide
 	 */
 	public Carte(ValeurCartes valeur, SorteCartes sorte)

@@ -67,7 +67,7 @@ public class Pioche implements Serializable
 	 * 
 	 * @return String, une chaîne qui représente la carte du dessus si la pioche
 	 *         n'est pas vide.
-	 * @throws exception.PiocheException
+	 * @throws exception.PiocheException Lance une exception si la pioche est vide
 	 */
 	public String consulterDessus() throws exception.PiocheException
 	{

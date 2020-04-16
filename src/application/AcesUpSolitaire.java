@@ -92,7 +92,7 @@ public class AcesUpSolitaire extends JFrame
 	/**
 	 * Constructeur de l'application Aces Up Solitaire. Il met en place une
 	 * interface simple
-	 * @param pPDC
+	 * @param pPDC Paquet de carte qui servira à créé la pioche
 	 */
 	public AcesUpSolitaire(PaquetDeCartes pPDC)
 	{
@@ -210,6 +210,8 @@ public class AcesUpSolitaire extends JFrame
 	 * -	les colonnes de cartes en pigeant une carte par colonne
 	 * -	dessiner la pioche
 	 * </pre>
+	 * 
+	 * @param pPDC Le paquet de carte qui servira pour la pioche
 	 */
 	public void initPartie(PaquetDeCartes pPDC)
 	{
@@ -721,7 +723,7 @@ public class AcesUpSolitaire extends JFrame
 	 *
 	 * @param pCible , le fichier cible
 	 *
-	 * @throws IOException
+	 * @throws IOException Lance une erreur si la fichier n'existe pas
 	 */
 	// TODO Complétez le code de la méthode : enregistrerInfoPartie
 	public void enregistrerInfoPartie(File pCible) throws IOException
@@ -746,8 +748,8 @@ public class AcesUpSolitaire extends JFrame
 	 *
 	 * @param pSource , le fichier source
 	 *
-	 * @throws IOException
-	 * @throws ClassNotFoundException
+	 * @throws IOException Lance une erreur si la fichier n'existe pas
+	 * @throws ClassNotFoundException Lance une erreur si la fichier n'existe pas
 	 */
 	// TODO Complétez le code de la méthode : lireInfoPartie
 	public void lireInfoPartie(File pSource)
@@ -804,7 +806,7 @@ public class AcesUpSolitaire extends JFrame
 	/**
 	 * Point d'entrée de l'appliaction
 	 *
-	 * @param args
+	 * @param args args
 	 */
 	public static void main(String[] args)
 	{

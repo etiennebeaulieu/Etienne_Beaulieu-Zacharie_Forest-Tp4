@@ -52,7 +52,7 @@ public class Pile implements Serializable
 	 * Retourne l'objet dépilé
 	 * 
 	 * @return Object, l'élément dépilé
-	 * @throws exception.PileException
+	 * @throws exception.PileException Lance une exception si la pile est vide
 	 */
 	public Object depiler() throws exception.PileException
 	{
@@ -71,7 +71,7 @@ public class Pile implements Serializable
 	 * dépiler. Lève une exception si la pile est vide.
 	 * 
 	 * @return Object, l'objet sur le dessus de la pile.
-	 * @throws exception.PileException
+	 * @throws exception.PileException Lance une exception si la pile est vide
 	 */
 	public Object getPremier() throws exception.PileException
 	{
